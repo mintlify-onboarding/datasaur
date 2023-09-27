@@ -1,0 +1,180 @@
+---
+title: "Workspace"
+---
+
+Workforce management is a critical piece of the data labeling flow. We've interviewed 100+ ML teams around the world and captured best practices for managing a labeling team. Datasaur's workforce management platform allows you to create teams, invite team members, assign projects, and review the work.
+
+## Creating a Team
+
+After signing in, you will automatically be directed to your personal workspace. On the top-right hand corner, please click **Switch Workspace** \-> **Create a New Workspace..** . You can type in a team name and add a logo.
+
+_Note: the maximum logo size that can be uploaded is 500 KB._
+
+![](/images/datasaur/workspace-management/Project%20Lists.png)
+
+Datasaur Project List Page
+
+You can also rename the team and change the logo by hovering to the left sidebar and clicking **Settings**.
+
+![](/images/datasaur/workspace-management/Setting%20Page.png)
+
+Datasaur Setting Page
+
+## Invite Members
+
+Once you have reached your team workspace, invite \_y\_our team members by navigating to the **Team Members** page on the left sidebar and clicking on **Invite new member**.
+
+![](/images/datasaur/workspace-management)
+
+You can save time by entering multiple emails at once. The maximum number of emails that can be sent at once is 20 emails.
+
+New members will automatically have a role as **Members/Labelers**. You can promote them to be **Reviewers** or **Admins** by clicking the triple-dot menus next to each labeler.
+
+![](/images/datasaur/workspace-management)
+
+You can also filter members by name and role.
+
+![](/images/datasaur/workspace-management)
+
+![](/images/datasaur/workspace-management)
+
+## Creating a Project
+
+* Creating a project in a team workspace can only be done by an admin. It is the same as creating a project in your personal workspace, with one key difference. When creating a custom project as an admin, there are additional 4th and 5th steps. Please follow the steps outlined in [Creating a Custom Project](/datasaur/getting-started/creating-a-project) until you reach step 4.
+
+## Project Creation Step 4 - Assignment
+
+The project creation step 4 is to properly set the assignment to labelers and reviewers.
+
+![](/images/datasaur/workspace-management/PCW%20Step%204.png)
+
+Project Creation Wizard Step 4
+
+* A project can be assigned to one or more labelers.
+
+* Conflict Resolution:  
+   * The **Peer Review Consensus** slider allows you to determine the threshold at which labels will be automatically accepted. For highly sensitive projects where there is no room for error, you may want to ensure unanimity from all assigned labelers. For less sensitive projects where efficiency and cost are more important than accuracy, a majority vote may be sufficient. Any label where the threshold is not met will need to be manually reviewed by you, the project creator / reviewer.  
+   * If you check **No Consensus**, all of labelers label will be treated as conflicting labels
+
+* **Allow dynamic review assignment** allows you assign your team member as a reviewer automatically when the labelers **have conflicts** in a project. The detailed information can be found [here](/datasaur/getting-started/creating-a-project/dynamic-review-capabilities).
+
+### Advanced setting
+
+**Advanced** setting allows you to distribute files to each of the labelers and [split the files](/datasaur/getting-started/creating-a-project/split-files) into multiple parts.
+
+![](/images/datasaur/workspace-management)
+
+Advanced setting in Step 4
+
+If you have a project with multiple files and multiple labelers, using the Auto file distribution might save your time. Our system will distribute the files according to the consensus review that has been set previously.
+
+_💡 Best practice: a common practice is to assign multiple labelers to the same project to get multiple perspectives and eliminate human bias. This can increase accuracy, but will increase costs and time._
+
+## Project Creation Step 5 - Project Settings
+
+In step 5, you can modify the project settings to match with your labeling workflow. These settings are also available in the Project Settings once the project is created.
+
+![](/images/datasaur/workspace-management/image%20(3)%20(1)%20(1)%20(2).png)
+
+* **Label set modification** ensures that the label set cannot be changed by labelers.
+
+* **Text modification** ensures that the document text itself cannot be changed by labelers or reviewers. Kindly refer to the table below for the detailed permission.  
+![](/images/datasaur/workspace-management/image%20(7)%20(2)%20(2).png)  
+Text Modification  
+📌 Please note that only admin can access the setting.
+
+* **Confirm unapplied label classes when marking document as complete** ensures that the assignees can review all label classes that are not applied in the document when marking the document as complete.
+
+* **Show labeler names in Review Mode** ensures that the reviewers can see labelers' names.
+
+* **Show rejected labels in Review Mode** ensures that the reviewers can see all the labels they rejected.
+
+* **Hide labels from inactive label set during review** ensures that labels from inactive label set will be hidden during review.
+
+* **Show original sentences in review mode** ensures the reviewers can see all original sentences.
+
+* **Mask Personally Identifiable Information (PII)** is in the next section.
+
+### Mask Personally Identifiable Information (PII)
+
+You can set the Mask PII setting to anonymize the selected information attributes in the project. After you turn the Mask PII setting on, you can define the masking data method and the attributes to mask by clicking the **Data Masking Settings.**
+
+![](/images/datasaur/workspace-management/image%20(30).png)
+
+**Masking Data Method** is how Datasaur masks the information attributes that you have defined. There are two ways to mask the information attributes:
+
+* **Random Character**: Replace the personal information with random character.  
+   * Example: May 23rd, 2022 → Pgh 78ax, 9928
+
+* **Asterisk**: Replace the personal information with asterisk.  
+   * Example: John Doe -> \*\*\*\* \*\*\*
+
+To select the **information attributes to mask**, you can check/uncheck the PII fields on the table. You can also set the regular expression rule to define what entities to mask.
+
+### Hide Labelers' Names
+
+As an admin, you can also hide labelers' names from the reviewers. This feature can be useful to avoid bias while reviewing the project. You can click on **Hide Labeler Names during Review** toggle to turn this feature on. The Review extension will look like the screenshot below to the Reviewer.
+
+![](/images/datasaur/workspace-management/image%20(153).png)
+
+## QA/Review
+
+After clicking the Launch Project button, you will be taken to the newly created project.
+
+⚠ Note that as the project creator you will start in **Reviewer Mode**. If you would like to start labeling, you will need to assign yourself, click the profile dropdown on the navigation bar, then click **Switch to Labeler Mode**. Any other assigned labelers will automatically start in **Labeler Mode**.
+
+![](/images/datasaur/workspace-management/image%20(106).png)
+
+**Reviewer Mode** has a **Review extension** on the right side. This contains a **Conflicts section** and a **Members section**.
+
+![](/images/datasaur/workspace-management)
+
+For more information about Document Labeling Reviewer Mode, please refer to this [link](https://datasaurai.gitbook.io/datasaur/getting-started/reviewer-mode#document-labeling-reviewer-mode).
+
+## Overview
+
+**Overview** contains a high-level overview of your team's projects and progress. This dashboard is only available and visible to Team Admins.
+
+Datasaur has 10 different analytic measurement in this page. The detailed information about each analytic can be seen [here](https://github.com/vulcan-ai/gitbook/blob/datasaur/workspace-management/broken-reference/README.md).
+
+### Projects
+
+**Projects** contains an overview of the projects created on this team along with relevant statistics. This shows a subset of all the team's projects, ordered by most recent activity. You can access the complete set of projects by clicking on the Projects tab in the left sidebar.
+
+![](/images/datasaur/workspace-management)
+
+## Project Details
+
+Beside the analytics for all projects in [Overview](https://github.com/vulcan-ai/gitbook/blob/datasaur/workspace-management/broken-reference/README.md) page, Datasaur also provide the detailed analytics per project. You can find the page by click the triple dots on each project, then choose View Project Details.
+
+![](/images/datasaur/workspace-management/image%20(262)%20(1)%20(1).png)
+
+## Manage Tags in Project Team
+
+In addition to being able to [manage tags from the Projects Dashboard](https://datasaurai.gitbook.io/datasaur/basics/creating-a-project/project-management#manage-tags), you can also manage tags for a project team from the Team Settings page. You can navigate to **Settings** on the left-side bar and click on **Tags**.
+
+_Note: only admins can manage tags._
+
+![](/images/datasaur/workspace-management)
+
+## Manage Export for Each Team Role
+
+This feature allows you to set the limitations for each role in exporting the project.
+
+For example, you want to disable Export feature on labelers' accounts due to security reasons. You can simply uncheck all the methods on **Labeler** section, then click **Save**.
+
+![](/images/datasaur/workspace-management)
+
+After that, Export feature will not be shown on labeler's account like the example below.
+
+![](/images/datasaur/workspace-management)
+
+## Remove team members
+
+Removing team members can be done by navigating to the left sidebar and select Members page. You can click the triple dots and click Remove.
+
+![](/images/datasaur/workspace-management/image%20(60).png)
+
+![](/images/datasaur/workspace-management/image%20(1).png)
+
+Don't worry! Removing team members from the workspace will remain all their labeling work.

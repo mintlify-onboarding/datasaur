@@ -1,0 +1,75 @@
+---
+title: "Python Script Example"
+---
+
+## Usage Requirement
+
+* This feature will only work in a [**team workspace**](/datasaur/workspace-management/workspace).
+
+* pip3 and python3 CLI installed on the machine.
+
+## Installation
+
+1. Download or clone this [repository](https://github.com/datasaur-ai/api-client-example) and go to the directory.
+
+2. Run `pip3 install -r requirements.txt`.
+
+## Guide
+
+#### 1\. Generate your OAuth credentials
+
+The instructions can be found [here](/datasaur/api/credentials). Save the credentials securely, we will use it for the next step.
+
+#### 2\. Set up a project via Custom Project
+
+We have five steps here. Set up your project until reaching Step 5 (Project Settings). Make sure all the configuration that you want for the project is set properly.
+
+#### 3\. In the Step 5, click “View Script” in the top right corner
+
+![](/images/image.png)
+
+Figure 1: Step 5 of Project Creation Wizard Default UI
+
+**4\. Copy the configuration by clicking the icon on the top right corner of the UI**
+
+![](/images/14.png)
+
+Figure 2: Step 5 of Project Creation Wizard View Script
+
+#### 5\. Paste the configuration to project\_configuration.json
+
+The file is located on the `api-client-example/create-project-async` folder.
+
+#### 6\. Insert your dataset for the project in the `api-client-example/create-project-async/documents` folder
+
+All files inside the folder will be treated as the project's documents. Make sure you remove any files that doesn't belong to the project.
+
+#### 7\. Run the command on your terminal to create the project
+
+Navigate to `api-client-example/create-project-async` first before running the command. Note that this API only submit a job, not a synchronous process. Thus, we need to make sure whether the job is successful which will be covered in the next step.
+
+```bash
+python3 api_client.py create_project \
+  --base_url https://app.datasaur.ai \
+  --client_id YOUR_CLIENT_ID \
+  --client_secret YOUR_CLIENT_SECRET \
+  --team_id YOUR_TEAM_ID
+ 
+# for windows replace \ with ^
+```
+
+#### 8\. Run this command to track your project creation status
+
+The `job_id` will be given at the previous step along with the full command as the response. The detailed of this API could be seen [here](/datasaur/api/get-data/check-job).
+
+```bash
+python3 api_client.py get_job_status \
+  --base_url https://app.datasaur.ai \
+  --client_id YOUR_CLIENT_ID \
+  --client_secret YOUR_CLIENT_SECRET \
+  --job_id YOUR_JOB_ID
+ 
+# for windows replace \ with ^ 
+```
+
+With these instructions, you can successfully create a new project by using a Python script via API.

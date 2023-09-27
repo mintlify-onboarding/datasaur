@@ -1,0 +1,51 @@
+---
+title: "Datasaur APIs"
+description: "Datasaur supports importing from and exporting to Webhooks. We also support fully programmatic project creation and export, and we will discuss how to do so in the following pages. Some notes before we begin:"
+---
+
+* Datasaur API uses the [Oauth 2.0 protocol](https://tools.ietf.org/html/rfc6749) for authentication and authorization.
+
+* Datasaur grants credentials via the [Client Credentials Grant](https://tools.ietf.org/html/rfc6749#section-4.4).
+
+* Datasaur also uses GraphQL. See [GraphQL Schemas Guideline](https://graphql.org/learn/schema/) for further information.
+
+## How to Call the API in a Nutshell
+
+Here is the [link](https://api-docs.datasaur.ai) to the API docs. Please note that the value examples from the API docs usually needs to be adjusted when making the request. Fully copy pasting may not work in some cases.
+
+1. Generate [OAuth2 credentials and obtain the access token.](/datasaur/api/credentials)
+
+2. Determine the query or mutation that you want to run from the API docs above.  
+   1. Specific for **project creation**, please refer to this [page](/datasaur/api/create-new-project).  
+   2. We are also covering some **common use cases** that you can see on the sub pages. Please start from there before diving directly to the API docs.  
+   3. For the rest of the queries and/or mutations, try the action that you want on the app and see the which API requests are done from the Network tab on the browser developer tools. Or you can always ask us on [_support@datasaur.ai_](mailto:support@datasaur.ai) and we will add the explanation on this sub pages.
+
+3. Make a POST HTTP call to **https://app.datasaur.ai/graphql**.  
+   * Add header `Authorization: Bearer <access token>`  
+   * Add header `Content-Type: application/json`  
+   * Construct the GraphQL request with JSON format below.  
+         * `operationName`: you can fill any alphanumeric string. To organize it properly, here is a [recommendation for you to follow](https://graphql.org/learn/queries/#operation-name).  
+         * `variables`: depends on the query/mutation parameters, fill the values properly.  
+         * `query`: copy and paste the example from the [API docs](https://api-docs.datasaur.ai) and stringify it, the API values would be filled in via variables attribute above.  
+         ```json  
+         {  
+           "operationName": "...could be anything, you name it...",  
+           "variables": {},  
+           "query": "...use the API docs example and stringify it..."  
+         }  
+         ```  
+   * Then, you need to define the body payload for the request.  
+         * If it's not a multipart, i.e. mutation that needs to upload or reference a file, use the GraphQL request above as the body payload of the request.  
+         * If it's a [multipart](https://github.com/jaydenseric/graphql-multipart-request-spec), here is the body payload would look like.  
+         ```json  
+         {  
+           "operations": { /* fill with GraphQL request above */ },  
+           "map": {  
+             /* each file upload below to the correspoding attributes */  
+             "fileTest1": ["variables.input.documents.0.file"]  
+           },  
+           "fileTest1": "@example.json" // absolute path to the file  
+         }  
+         ```
+
+We also have some other Python example on [this repository](https://github.com/datasaur-ai/api-client-example). You can follow the steps in the `readme`. 💡 _Feel free to contact us at_ [_support@datasaur.ai_](mailto:support@datasaur.ai) _for further API questions._

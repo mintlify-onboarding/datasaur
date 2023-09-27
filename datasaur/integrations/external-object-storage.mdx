@@ -1,0 +1,25 @@
+---
+title: "External Object Storage"
+---
+
+This integration allows you to create projects using your preferred cloud storage provider. You will have a control over access from Datasaur to your object storage.
+
+This will be very beneficial for **doc-based** and **bounding-box project** because Datasaur only saves questions and answers (without the file data) from the project.
+
+But for both token-based and row-based, the data is still being processed and copied to our database. We're still working to also make these types supported.
+
+**Supported Cloud Providers**
+
+| Cloud Storage        | Setup Guide                                                                    |
+| -------------------- | ------------------------------------------------------------------------------ |
+| Amazon S3            | [Guide](/datasaur/integrations/external-object-storage/aws-s3)               |
+| Google Cloud Storage | [Guide](/datasaur/integrations/external-object-storage/google-cloud-storage) |
+| Azure Blob Storage   | [Guide](/datasaur/integrations/external-object-storage/azure-blob-storage)   |
+
+**Project Creation Wizard**
+
+You can select your preferred object storage on the first step just like figure below. Datasaur will not copy the files that are selected.
+
+![](/images/datasaur/integrations/image%20(1).png)
+
+Figure 1: Select files directly from external object storage

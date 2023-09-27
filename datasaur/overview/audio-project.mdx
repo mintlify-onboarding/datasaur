@@ -1,0 +1,71 @@
+---
+title: "Audio Project"
+---
+
+### Project Creation
+
+Let's start an audio project: Creating an audio project is simple in Datasaur. All of the steps are the same as creating token-based projects.
+
+From your project home page open “Create a Custom Project.” [_(You can also watch this Youtube video for instructions on how to create an audio project)_](https://youtu.be/9IrY-xcta7w). In order to begin, you should upload both your audio and transcription on this page:
+
+<Frame>![](/images/image.png)</Frame>
+
+The type of audio files we accept: **.mp3**, **.flac**, and **.wav**
+
+The type of transcription files we accept: .srt and .txt format. Here is an example:
+
+<Card title="Sample.txt" icon="paperclip" href="/content/components/card-group">
+  2KB, Binary
+</Card>
+
+Before we move on, please make sure the name of **the transcription file is the same as the name of the audio file**. For example: `SampleFile.txt` and `SampleFile.flac`. Since both the transcription and the audio file have the same name, Datasaur will recognize them as corresponding files.
+
+So now our window should look like this,
+
+<Frame>![](/images/3.png)</Frame>
+
+For the rest of the Project Creation Process, you will then be able to take all the steps one takes in a token-based project: Preview, Labeler's Tasks, Assignment, and Project Settings:
+
+<Frame caption="The preview step will only display the transcription. The Labeler's task step will only allow Token-based labeling.">
+  <img src="/images/4.gif" />
+</Frame>
+
+### Audio Interface Legend
+
+<Frame>![](/images/5.png)</Frame>
+
+### Labeling an Audio Project
+
+<Frame>![](/images/Interface.PNG)</Frame>
+
+In the general layout of the text tool, you may regularly label any tokens in the transcript with the label sets that you have either created or uploaded. You will find an audio player on top of the interface with timestamps for your audio. You will also see a control panel between the text interface and the audio timestamps.
+
+The buttons on this control panel enable you to: Rewind, Play/Pause, Fast-Forward, Volume, Control Audio Settings (which toggles audio speed and auto-scroll), Create a Timestamp Label, and Zoom Out/In of the Audio Timestamps.[ \[Please watch this brief video for a visual guide\].](https://www.loom.com/share/a0078486e0fc4fda8b26f0354e2c2100)
+
+<Frame>![](/images/6.PNG)</Frame>
+
+The Control Panel
+
+You can also create a new timestamp and bound that timestamp to its corresponding text. Click on the 'Create a Timestamp Label' button found on the control panel. Highlight a portion of the audio interface, and then highlight the span of tokens that correspond to your new timestamp. Then you're done! You've now made a new timestamp corresponding to a span of tokens.
+
+<Frame>![](/images/7.gif)</Frame>
+
+### Edit Sentence in Audio Project Behavior
+
+When editing transcriptions, we have optimized our behavior to accommodate changes. If the similarity between the original transcription and the edited version is above 70%, we keep the timestamp labels, and you will only need to adjust the corresponding text accordingly.
+
+However, if the similarity falls below 70%, there is a chance that the timestamp labels will be removed. This happens when the edited text differs significantly from the original, indicating substantial changes. Our threshold ensures that timestamp labels remain for minor modifications but are removed for more significant alterations.
+
+**Example**
+
+<Frame caption="Labeled Timestamp">
+  <img src="/images/8.png" />
+</Frame>
+
+<Frame caption="Edited Sentence">
+  <img src="/images/9.png" />
+</Frame>
+
+After we **edit** the sentence in the first line, the timestamp labels will be disappeared. It because the similarity between the original sentence and the edited sentence is less than 70%.
+
+If you upload an empty transcription, we will create placeholder lines with `**-**` as the content, and they will already be associated with the timestamp. Please note that editing the placeholder content will remove the timestamp label, and you will need to re-draw it manually.

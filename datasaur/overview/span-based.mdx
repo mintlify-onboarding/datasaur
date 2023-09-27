@@ -1,0 +1,30 @@
+---
+title: "Span Based"
+sidebarTitle: "Overview"
+---
+
+## Span-based
+
+**Span-based** or **Token-Based** projects allow you to label tokens in a text document. This type is well-suited for projects, such as [NER](/datasaur/overview/task-type/project-templates#named-entity-recognition) and [POS](/datasaur/overview/task-type/project-templates#part-of-speech).
+
+![](/images/1.png)
+
+Before submitting your project, you can also adjust additional settings as described below.
+
+* **Limit selection to a maximum of 1 token** is useful when you want to enforce that every token in the document must be labeled.
+
+* **Tokens and token spans should have at most one label** does not allow you to add multiple labels to a single token or token span.
+
+* **Allow arrows to be drawn between labels** allows you to draw arrows from one label to another to annotate relationships between words. This is useful for showing that an adjective is related to a noun, or a pronoun is referring to a person.
+
+* **Default text** selection allows you to select whether token or character selection. Some languages may require you to change the selection to character selection, i.e. Mandarin, Korean, or Thai.
+
+![](/images/2.png)
+
+<Note>
+    If you have already created a project, you can change the configurations through_ [_**Settings**_ _._](/datasaur/getting-started/lets-get-labeling#project-settings)
+</Note>
+
+<Info>
+    Aside from NER and POS, [audio labeling](/datasaur/overview/task-type/span-based/audio-project) is another type of token-based labeling. The main difference is that an audio interface utilizes a waveform to display the audio and allows for the modification of timestamps.
+</Info>

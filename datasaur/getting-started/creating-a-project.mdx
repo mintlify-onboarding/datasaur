@@ -1,0 +1,123 @@
+---
+title: "Creating a Project"
+---
+
+After [signing in](https://app.datasaur.ai/sign-in), you will be automatically directed to your personal workspace. You can see the Project shortcuts and the list of Projects that you are working on.
+
+![](/images/datasaur/getting-started/First%20Page%20Datasaur.png)
+
+Creating a Project can be done by clicking on the **Create project** button, or on one of the **Project Template** shortcuts. In this article, we will walk through creating a custom Project and [the next article describes each of the Project Templates](/datasaur/overview/task-type/project-templates). If you would like a tutorial on creating a project for [token](https://www.youtube.com/watch?v=T%5FG7wWx7LRg), [audio](https://www.youtube.com/watch?v=9IrY-xcta7w), [OCR](https://www.youtube.com/watch?v=YsObDLKsewY), or document based Project please watch their corresponding Youtube videos.
+
+## Project Creation Wizard
+
+The Project Creation Wizard is a tool for creating custom Projects. It has three basic steps: **add data**, **preview data**, and **labeler tasks**. (A fourth step is available for team admins to **assign labelers**).
+
+### Step 1: Adding data ([Video Tutorial](https://www.loom.com/share/98e123df479c4685b7e62750f2eb7359))
+
+Datasaur supports a wide variety of formats, including:
+
+| Formats                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| .[txt](https://basedomain.ai/files/gitbook/littleprince.txt), [.tsv](https://basedomain.ai/files/gitbook/littleprince.tsv), [.json](https://basedomain.ai/files/gitbook/littleprince.json), [.csv](https://basedomain.ai/files/gitbook/littleprince.csv), [.xls](https://basedomain.ai/files/gitbook/littleprince.xls), [.xlsx](https://basedomain.ai/files/gitbook/littleprince.xlsx), [.pdf](https://basedomain.ai/files/gitbook/littleprince.pdf), [.jpeg](https://basedomain.ai/files/gitbook/alanturing.jpeg), [.jpg](https://basedomain.ai/files/gitbook/alanturing.jpg), [.png](https://basedomain.ai/files/gitbook/alanturing.png), [.md](https://basedomain.ai/files/gitbook/littleprince.md), [.gif](https://basedomain.ai/files/gitbook/alanturing.gif), [.svg](https://basedomain.ai/files/gitbook/alanturing.svg), [.bmp](https://basedomain.ai/files/gitbook/alanturing.bmp), [.tiff](https://basedomain.ai/files/gitbook/alanturing.tiff), [.tif](https://basedomain.ai/files/gitbook/alanturing.tif), [.webp](https://basedomain.ai/files/gitbook/alanturing.webp), .mp4, .url, [.conll](https://datasaurai.gitbook.io/datasaur/supported-formats#conll), [.conllu](https://datasaurai.gitbook.io/datasaur/supported-formats#example-6), [.pptx](/datasaur/compatibility-and-updates/supported-formats#pptx-ppt), [.ppt](/datasaur/compatibility-and-updates/supported-formats#pptx-ppt), [.docx](/datasaur/compatibility-and-updates/supported-formats#docx-doc), [.doc](/datasaur/compatibility-and-updates/supported-formats#docx-doc). |
+
+![](/images/datasaur/getting-started/image%20(3).png)
+
+You are able to upload multiple files, **but all files in a Project must be the same file format.**
+
+Uploading the data can be done in two ways: **drag and drop** and **browsing files from your hard drive**.
+
+If you are interested in creating Projects via API, you can find a [full article here](/datasaur/api/create-new-project).
+
+_Note: the maximum file size allowed is 50 MB._
+
+### Step 2: Preview the uploaded data ([Video Tutorial](https://www.loom.com/share/efae3c061e20499f907930f2bc11f3dd))
+
+This step allows you to preview what your data will look like.
+
+![](/images/datasaur/getting-started)
+
+#### 📝 Table data only
+
+The **Number of rows displayed per page** setting determines how many rows should be displayed on one page. Choosing _All rows_ will allow infinite scrolling through all the data.
+
+The **Expand Media** setting allows you to choose the media resolution that will be displayed on the page. Higher resolutions will allow you to view the media in greater detail, but will take longer to load.
+
+The **Enable markdown parsing** allows you to parse markdown in row-based project. We recommend preprocessing your file with Markdown syntax before uploading it to Datasaur.
+
+![](/images/datasaur/getting-started)
+
+Markdown parsing checked
+
+You can also edit the header and hide columns by right-clicking the header.
+
+![](/images/datasaur/getting-started)
+
+🧑‍🤝‍🧑 **If you are** [**on a team project**](/datasaur/workspace-management/workspace)**, please note the following:**
+
+* If you choose _**Hide column,**_ _this setting_ will be propagated to the labelers as well. Labelers can show it later if they want.
+
+* If you choose _**Hide column from labeler**_, the labelers won't be able to show the columns at all.
+
+### Step 3: Labeler Tasks ([Video Tutorial](https://www.loom.com/share/f23d1d1dcabc41ffb192d1c334452d58))
+
+In this last step, you must choose whether you want to label individual tokens or answer questions about the text.
+
+There are three task types that you can choose: **token-based**, **row-based**, and **document-based**.
+
+* [**Token-based**](https://github.com/vulcan-ai/gitbook/blob/datasaur/getting-started/creating-a-project/broken-reference/README.md) allows you to label tokens in a text document.  
+   * If you would like a tutorial on token-based Projects, please watch the [corresponding YouTube videos.](https://youtu.be/T%5FG7wWx7LRg)
+
+* [**Row-based**](https://github.com/vulcan-ai/gitbook/blob/datasaur/getting-started/creating-a-project/broken-reference/README.md) allows you to label data in tables on a row-by-row basis.  
+   * If you would like a tutorial on row-based Projects, please watch the [corresponding YouTube videos.](https://youtu.be/KDRHJ7JVuDk)
+
+* [**Document-based**](https://github.com/vulcan-ai/gitbook/blob/datasaur/getting-started/creating-a-project/broken-reference/README.md) allows you to label entire documents at a time.
+
+![](/images/datasaur/getting-started/image%20(8)%20(1)%20(2)%20(1).png)
+
+You can create or upload label sets
+
+If you select **token-based**, you will be asked to create or upload [a label set](/datasaur/getting-started/lets-get-labeling/label-sets#token-based-labeling). Label sets contain the label classes labelers will be able to choose from.
+
+If you select **row-based** or **document-based**, you will be asked to fill in the set of questions. There are nine question types available.
+
+1. 1.  
+[**Text Field**](/datasaur/getting-started/lets-get-labeling/label-sets#1-text-field)
+
+2. 2.  
+[**Text Area**](/datasaur/getting-started/lets-get-labeling/label-sets#2-text-area)
+
+3. 3.  
+[**Dropdown**](/datasaur/getting-started/lets-get-labeling/label-sets#3-dropdown)
+
+4. 4.  
+[**Hierarchical dropdown**](/datasaur/getting-started/lets-get-labeling/label-sets#4-hierarchical-dropdown)
+
+5. 5.  
+[**Date**](/datasaur/getting-started/lets-get-labeling/label-sets#5-date)
+
+6. 6.  
+[**Time**](/datasaur/getting-started/lets-get-labeling/label-sets#6-time)
+
+7. 7.  
+[**Slider**](/datasaur/getting-started/lets-get-labeling/label-sets#7-slider)
+
+8. 8.  
+[**Grouped Attributes**](/datasaur/getting-started/lets-get-labeling/label-sets#8-grouped-attributes)
+
+9. 9.  
+[**Checkbox**](/datasaur/getting-started/lets-get-labeling/label-sets#9-checkbox)
+
+10. 10.  
+URL
+
+More information about these task types can be [found here](https://github.com/vulcan-ai/gitbook/blob/datasaur/getting-started/creating-a-project/broken-reference/README.md).
+
+After adding the questions and creating your project, your labeling task will look something like the example below. There are also shortcuts to creating specific project types that [we discuss in detail here](/datasaur/overview/task-type/project-templates).
+
+![](/images/datasaur/getting-started/image%20(1)%20(1)%20(1)%20(1)%20(1)%20(1)%20(1).png)
+
+## Create a New Project from File Menu
+
+Finally, if you are already in a project, you can also create new projects from the File Menu. Once you click one of the formats below, you will be directed straight to the new blank project.
+
+![](/images/datasaur/getting-started/image%20(4).png)
